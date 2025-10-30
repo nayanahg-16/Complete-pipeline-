@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-app-c5
-        image: manjukolkar007/test-dev:latest
+        image: nayanahg/project3:latest
         ports:
         - containerPort: 80
 --- 
@@ -31,4 +31,5 @@ spec:
     port: 80
     targetPort: 80
     nodePort: 30326
+
 
