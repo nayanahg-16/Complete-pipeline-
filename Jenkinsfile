@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_IMAGE = 'manjukolkar007/test-dev:latest'
-    }
+    
     stages {
         stage('Clone Repository') {
             steps {
@@ -12,7 +10,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                docker build -t $DOCKER_IMAGE .
+                docker build -t nayanahg/project3:latest .
                 '''
             }
         }
@@ -27,7 +25,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                sh 'docker push nayanahg/project1'
+                sh 'docker push nayanahg/project3'
             }
         }
         stage('Deploy to Kubernetes') {
@@ -39,6 +37,7 @@ pipeline {
         }
     }
 }
+
 
 
 
