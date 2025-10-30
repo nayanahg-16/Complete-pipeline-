@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                sh 'docker push $DOCKER_IMAGE'
+                sh 'docker push nayanahg/project-1'
             }
         }
         stage('Deploy to Kubernetes') {
@@ -39,4 +39,5 @@ pipeline {
         }
     }
 }
+
 
